@@ -86,9 +86,13 @@ color:#20b356;
 }
 
 .desc{
-font-size:12px;
+font-size:13px;
+line-height:1.5;
 color:#555;
-margin-bottom:8px;
+margin-bottom:10px;
+text-align:center;
+word-break:break-word;
+padding:0 5px;
 }
 
 .arrow{
