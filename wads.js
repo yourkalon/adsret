@@ -15,31 +15,19 @@ style.textContent = `
 width:350px;
 height:250px;
 background:#fff;
-border:1px solid #ececec;
+border:1px solid #eaeaea;
 box-shadow:0 4px 18px rgba(0,0,0,.08);
 overflow:hidden;
 position:relative;
 font-family:Arial,sans-serif;
-}
-
-.ad-tools{
-position:absolute;
-top:8px;
-right:10px;
-z-index:20;
 display:flex;
-gap:10px;
-font-size:12px;
-color:#1ea7e1;
 }
 
 .hero{
-position:absolute;
-left:0;
-top:0;
 width:42%;
 height:100%;
 overflow:hidden;
+position:relative;
 }
 
 .hero img{
@@ -55,30 +43,29 @@ inset:0;
 background:linear-gradient(
 90deg,
 transparent 55%,
-rgba(255,255,255,.2) 70%,
-rgba(255,255,255,.95) 100%
+rgba(255,255,255,.2) 75%,
+rgba(255,255,255,.95)
 );
 }
 
 .content{
-position:absolute;
-right:0;
-top:0;
 width:58%;
 height:100%;
-padding:18px 10px;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+padding:12px;
+box-sizing:border-box;
 }
 
 .title{
-font-size:21px;
+font-size:20px;
 font-weight:800;
-line-height:1.1;
-margin-bottom:8px;
+line-height:1.2;
+color:#111;
+margin-bottom:6px;
 }
 
 .title span{
@@ -86,59 +73,74 @@ color:#20b356;
 }
 
 .desc{
-font-size:13px;
-line-height:1.5;
+font-size:12.5px;
 color:#555;
-margin-bottom:10px;
-text-align:center;
-word-break:break-word;
-padding:0 5px;
+line-height:1.4;
+margin-bottom:8px;
 }
 
 .arrow{
-font-size:28px;
+font-size:26px;
 color:#20b356;
 animation:bounce .9s infinite;
+margin-bottom:6px;
 }
 
 @keyframes bounce{
 0%,100%{transform:translateY(0);}
-50%{transform:translateY(7px);}
+50%{transform:translateY(6px);}
 }
 
 .buttons{
 width:100%;
 display:flex;
 flex-direction:column;
-gap:7px;
-margin-top:10px;
+gap:8px;
 }
 
 .btn{
 display:flex;
 align-items:center;
 justify-content:center;
-gap:7px;
+gap:6px;
 text-decoration:none;
-padding:9px;
-border-radius:10px;
-font-size:13px;
+padding:9px 10px;
+border-radius:8px;
+font-size:12.5px;
 font-weight:700;
 color:#fff;
+transition:0.2s;
+width:100%;
+box-sizing:border-box;
+}
+
+.btn:hover{
+transform:scale(1.03);
 }
 
 .call{
-background:#0d8a4b;
+background:linear-gradient(90deg,#0d8a4b,#18b95f);
 }
 
 .message{
-background:#22c45e;
+background:linear-gradient(90deg,#22c45e,#34d96f);
+}
+
+.ad-tools{
+position:absolute;
+top:6px;
+right:8px;
+display:flex;
+gap:8px;
+font-size:12px;
+color:#1ea7e1;
+z-index:10;
 }
 `;
 
 document.head.appendChild(style);
 
-// HTML
+// HTML inject
 document.getElementById("myad").innerHTML = `
 <div class="wa-native-ad">
 
@@ -159,7 +161,7 @@ document.getElementById("myad").innerHTML = `
 </div>
 
 <div class="desc">
-আমার হোয়াটসঅ্যাপ নম্বর নিচে দেওয়া আছে
+নিচের বাটনে ক্লিক করে WhatsApp-এ যোগাযোগ করুন
 </div>
 
 <div class="arrow">↓</div>
