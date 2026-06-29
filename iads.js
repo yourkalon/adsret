@@ -1,155 +1,122 @@
 (function () {
 
-if (!document.getElementById("imoBox")) return;
+const box = document.getElementById("imoZone");
+if (!box) return;
 
-if (!document.getElementById("imo-ad-style-v2")) {
+if (!document.getElementById("imoLiteStyle")) {
 
 const css = document.createElement("style");
-css.id = "imo-ad-style-v2";
+css.id = "imoLiteStyle";
 
 css.textContent = `
-.ix-frame{
+.skyWrap{
 width:350px;
 height:250px;
-background:#fff;
-border:1px solid #e8e8e8;
-box-shadow:0 3px 12px rgba(0,0,0,.08);
-display:flex;
+position:relative;
 overflow:hidden;
+border-radius:10px;
 font-family:Arial,sans-serif;
-position:relative;
+box-shadow:0 4px 16px rgba(0,0,0,.15);
 }
 
-.ix-photo{
-width:40%;
-position:relative;
-}
-
-.ix-photo img{
+.skyWrap img{
 width:100%;
 height:100%;
 object-fit:cover;
 display:block;
 }
 
-.ix-panel{
-width:60%;
-padding:12px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+.skyShade{
+position:absolute;
+inset:0;
+background:linear-gradient(
+to top,
+rgba(0,0,0,.85) 0%,
+rgba(0,0,0,.55) 35%,
+rgba(0,0,0,.15) 100%
+);
+}
+
+.skyDock{
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+padding:14px;
 box-sizing:border-box;
 }
 
-.ix-head{
-font-size:20px;
-font-weight:700;
-line-height:1.2;
-margin-bottom:8px;
-color:#111;
-}
-
-.ix-head b{
-color:#0084ff;
-}
-
-.ix-text{
-font-size:12px;
-line-height:1.5;
-color:#555;
-margin-bottom:8px;
-}
-
-.ix-down{
-font-size:22px;
-color:#0084ff;
-animation:ixMove .8s infinite;
-margin-bottom:8px;
-}
-
-@keyframes ixMove{
-50%{transform:translateY(5px);}
-}
-
-.ix-group{
-width:100%;
-display:flex;
-flex-direction:column;
-gap:7px;
-}
-
-.ix-btn{
-display:flex;
-align-items:center;
-justify-content:center;
-text-decoration:none;
+.skyName{
 color:#fff;
-font-size:13px;
+font-size:22px;
+font-weight:800;
+line-height:1.1;
+margin-bottom:4px;
+}
+
+.skyText{
+color:#f1f1f1;
+font-size:12px;
+margin-bottom:10px;
+}
+
+.skyGo{
+display:block;
+width:100%;
+text-align:center;
+text-decoration:none;
+background:#0084ff;
+color:#fff;
+font-size:15px;
 font-weight:700;
-padding:10px;
-border-radius:7px;
+padding:11px 12px;
+border-radius:8px;
+box-sizing:border-box;
 transition:.2s;
 }
 
-.ix-btn:hover{
-opacity:.92;
+.skyGo:hover{
+transform:scale(1.02);
 }
 
-.ix-call{
-background:#006eff;
-}
-
-.ix-chat{
-background:#00a2ff;
-}
-
-.ix-mini{
+.skyMark{
 position:absolute;
-top:6px;
+top:8px;
 right:8px;
-font-size:12px;
-color:#999;
+background:rgba(255,255,255,.9);
+padding:3px 7px;
+border-radius:20px;
+font-size:11px;
+font-weight:700;
+color:#444;
 }
 `;
 
 document.head.appendChild(css);
 }
 
-document.getElementById("imoBox").innerHTML = `
-<div class="ix-frame">
+box.innerHTML = `
+<div class="skyWrap">
 
-<div class="ix-mini">Ad</div>
+<img src="https://i.postimg.cc/8cmJGWHb/sdfd-(1)-optimized.webp" alt="">
 
-<div class="ix-photo">
-<img src="YOUR_IMAGE_URL">
+<div class="skyShade"></div>
+
+<div class="skyMark">Sponsored</div>
+
+<div class="skyDock">
+
+<div class="skyName">
+হাই, আমি নীলা
 </div>
 
-<div class="ix-panel">
-
-<div class="ix-head">
-হ্যালো,<br>
-<b>আমি নীলা</b>
+<div class="skyText">
+IMO-তে সরাসরি কথা বলতে নিচের বাটনে ক্লিক করুন
 </div>
 
-<div class="ix-text">
-IMO-তে কথা বলতে নিচের বাটনে ক্লিক করুন
-</div>
-
-<div class="ix-down">↓</div>
-
-<div class="ix-group">
-
-<a href="https://t.co/p5TIkcrbmB" class="ix-btn ix-call">
-📞 IMO Call
+<a href="https://t.co/p5TIkcrbmB" class="skyGo">
+💬 IMO Chat Now
 </a>
-
-<a href="https://t.co/p5TIkcrbmB" class="ix-btn ix-chat">
-💬 IMO Chat
-</a>
-
-</div>
 
 </div>
 
