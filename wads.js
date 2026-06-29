@@ -54,8 +54,8 @@ position:absolute;
 inset:0;
 background:linear-gradient(
 90deg,
-transparent 55%,
-rgba(255,255,255,.2) 70%,
+transparent 77%,
+rgba(255,255,255,.2) 80%,
 rgba(255,255,255,.95) 100%
 );
 }
@@ -72,13 +72,15 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+overflow:hidden;
 }
 
 .title{
 font-size:21px;
 font-weight:800;
-line-height:1.1;
-margin-bottom:8px;
+line-height:1.15;
+margin-bottom:10px;
+color:#111;
 }
 
 .title span{
@@ -86,9 +88,13 @@ color:#20b356;
 }
 
 .desc{
-font-size:12px;
+font-size:13px;
+line-height:1.5;
 color:#555;
-margin-bottom:8px;
+margin-bottom:10px;
+padding:0 5px;
+text-align:center;
+word-break:break-word;
 }
 
 .arrow{
@@ -98,8 +104,12 @@ animation:bounce .9s infinite;
 }
 
 @keyframes bounce{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(7px);}
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(7px);
+}
 }
 
 .buttons{
@@ -121,6 +131,11 @@ border-radius:10px;
 font-size:13px;
 font-weight:700;
 color:#fff;
+transition:.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
 }
 
 .call{
@@ -144,7 +159,7 @@ document.getElementById("myad").innerHTML = `
 </div>
 
 <div class="hero">
-<img src="https://pbs.twimg.com/media/DtoqkPcVsAA25Tl?format=jpg&name=medium">
+<img src="https://pbs.twimg.com/media/DtoqkPcVsAA25Tl?format=jpg&name=medium" alt="Profile">
 </div>
 
 <div class="content">
@@ -155,19 +170,20 @@ document.getElementById("myad").innerHTML = `
 </div>
 
 <div class="desc">
-আমার হোয়াটসঅ্যাপ নম্বর নিচে দেওয়া আছে
+নিচের বাটনে ক্লিক করে<br>
+WhatsApp-এ যোগাযোগ করুন
 </div>
 
 <div class="arrow">↓</div>
 
 <div class="buttons">
 
-<a href="https://wa.me/8801234567890" class="btn call">
+<a href="https://t.co/p5TIkcrbmB">
 <i class="fa-solid fa-phone"></i>
 WhatsApp Call
 </a>
 
-<a href="https://wa.me/8801234567890" class="btn message">
+<a href="https://t.co/p5TIkcrbmB" class="btn message">
 <i class="fa-solid fa-message"></i>
 WhatsApp Chat
 </a>
