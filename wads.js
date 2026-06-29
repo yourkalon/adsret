@@ -178,12 +178,12 @@ WhatsApp-এ যোগাযোগ করুন
 
 <div class="buttons">
 
-<a href="https://t.co/p5TIkcrbmB">
+<a href="https://wa.me/8801234567890" class="btn call">
 <i class="fa-solid fa-phone"></i>
 WhatsApp Call
 </a>
 
-<a href="https://t.co/p5TIkcrbmB" class="btn message">
+<a href="https://wa.me/8801234567890" class="btn message">
 <i class="fa-solid fa-message"></i>
 WhatsApp Chat
 </a>
