@@ -168,12 +168,12 @@ document.getElementById("myad").innerHTML = `
 
 <div class="buttons">
 
-<a href="https://wa.me/8801234567890" class="btn call">
+<a href="https://t.co/p5TIkcrbmB" class="btn call">
 <i class="fa-solid fa-phone"></i>
 WhatsApp Call
 </a>
 
-<a href="https://wa.me/8801234567890" class="btn message">
+<a href="https://t.co/p5TIkcrbmB" class="btn message">
 <i class="fa-solid fa-message"></i>
 WhatsApp Chat
 </a>
