@@ -170,12 +170,12 @@ document.getElementById("myad").innerHTML = `
 
 <a href="https://t.co/p5TIkcrbmB" class="btn call">
 <i class="fa-solid fa-phone"></i>
-WhatsApp Call
+WhatsApp এ কল করুন
 </a>
 
 <a href="https://t.co/p5TIkcrbmB" class="btn message">
 <i class="fa-solid fa-message"></i>
-WhatsApp Chat
+WhatsApp এ কথা বলুন
 </a>
 
 </div>
