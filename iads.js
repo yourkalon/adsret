@@ -1,44 +1,38 @@
 (function () {
 
-if (!document.getElementById("myad")) return;
+if (!document.getElementById("imoBox")) return;
 
-// Font Awesome
-const fa = document.createElement("link");
-fa.rel = "stylesheet";
-fa.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";
-document.head.appendChild(fa);
+if (!document.getElementById("imo-ad-style-v2")) {
 
-// CSS
-const style = document.createElement("style");
-style.textContent = `
-.imo-ad{
+const css = document.createElement("style");
+css.id = "imo-ad-style-v2";
+
+css.textContent = `
+.ix-frame{
 width:350px;
 height:250px;
-background:linear-gradient(135deg,#0d6efd,#4da3ff);
-border-radius:10px;
-overflow:hidden;
-position:relative;
-font-family:Arial,sans-serif;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
-display:flex;
-}
-
-.imo-left{
-width:40%;
 background:#fff;
+border:1px solid #e8e8e8;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
 display:flex;
-align-items:center;
-justify-content:center;
+overflow:hidden;
+font-family:Arial,sans-serif;
 position:relative;
 }
 
-.imo-left img{
+.ix-photo{
+width:40%;
+position:relative;
+}
+
+.ix-photo img{
 width:100%;
 height:100%;
 object-fit:cover;
+display:block;
 }
 
-.imo-right{
+.ix-panel{
 width:60%;
 padding:12px;
 display:flex;
@@ -46,97 +40,113 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-color:#fff;
+box-sizing:border-box;
 }
 
-.imo-title{
-font-size:19px;
-font-weight:800;
+.ix-head{
+font-size:20px;
+font-weight:700;
 line-height:1.2;
-margin-bottom:6px;
+margin-bottom:8px;
+color:#111;
 }
 
-.imo-title span{
-color:#ffe600;
+.ix-head b{
+color:#0084ff;
 }
 
-.imo-desc{
-font-size:12.5px;
-opacity:0.95;
-margin-bottom:10px;
+.ix-text{
+font-size:12px;
+line-height:1.5;
+color:#555;
+margin-bottom:8px;
 }
 
-.imo-chat{
+.ix-down{
+font-size:22px;
+color:#0084ff;
+animation:ixMove .8s infinite;
+margin-bottom:8px;
+}
+
+@keyframes ixMove{
+50%{transform:translateY(5px);}
+}
+
+.ix-group{
 width:100%;
 display:flex;
 flex-direction:column;
-gap:8px;
+gap:7px;
 }
 
-.imo-btn{
+.ix-btn{
 display:flex;
 align-items:center;
 justify-content:center;
-gap:6px;
 text-decoration:none;
-padding:9px;
-border-radius:20px;
-font-size:12.5px;
-font-weight:700;
-color:#0d6efd;
-background:#fff;
-transition:0.2s;
-}
-
-.imo-btn:hover{
-transform:scale(1.05);
-}
-
-.imo-icon{
-position:absolute;
-top:8px;
-right:10px;
 color:#fff;
+font-size:13px;
+font-weight:700;
+padding:10px;
+border-radius:7px;
+transition:.2s;
+}
+
+.ix-btn:hover{
+opacity:.92;
+}
+
+.ix-call{
+background:#006eff;
+}
+
+.ix-chat{
+background:#00a2ff;
+}
+
+.ix-mini{
+position:absolute;
+top:6px;
+right:8px;
 font-size:12px;
-opacity:0.9;
+color:#999;
 }
 `;
 
-document.head.appendChild(style);
+document.head.appendChild(css);
+}
 
-// HTML
-document.getElementById("myad").innerHTML = `
-<div class="imo-ad">
+document.getElementById("imoBox").innerHTML = `
+<div class="ix-frame">
 
-<div class="imo-icon">
-<i class="fa-solid fa-circle-info"></i>
+<div class="ix-mini">Ad</div>
+
+<div class="ix-photo">
+<img src="YOUR_IMAGE_URL">
 </div>
 
-<div class="imo-left">
-<img src="https://i.postimg.cc/50ffVvQm/12.jpg">
+<div class="ix-panel">
+
+<div class="ix-head">
+হ্যালো,<br>
+<b>আমি নীলা</b>
 </div>
 
-<div class="imo-right">
-
-<div class="imo-title">
-Hi 👋<br>
-<span>আমি মালিহা</span>
+<div class="ix-text">
+IMO-তে কথা বলতে নিচের বাটনে ক্লিক করুন
 </div>
 
-<div class="imo-desc">
-IMO তে আমাকে মেসেজ করুন
-</div>
+<div class="ix-down">↓</div>
 
-<div class="imo-chat">
+<div class="ix-group">
 
-<a href="https://t.co/p5TIkcrbmB" class="imo-btn">
-<i class="fa-brands fa-whatsapp"></i>
-IMO Chat
+<a href="https://t.co/p5TIkcrbmB" class="ix-btn ix-call">
+📞 IMO Call
 </a>
 
-<a href="https://t.co/p5TIkcrbmB" class="imo-btn">
-<i class="fa-solid fa-video"></i>
-IMO Call
+<a href="https://t.co/p5TIkcrbmB" class="ix-btn ix-chat">
+💬 IMO Chat
 </a>
 
 </div>
