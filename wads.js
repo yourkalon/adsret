@@ -150,7 +150,7 @@ document.getElementById("myad").innerHTML = `
 </div>
 
 <div class="hero">
-<img src="https://i.postimg.cc/2S8ZGbS2/Dtoqk-Pc-Vs-AA25Tl-(1).jpg">
+<img src="https://i.postimg.cc/4N4ntYPW/Dtoqk-Pc-Vs-AA25Tl.webp">
 </div>
 
 <div class="content">
